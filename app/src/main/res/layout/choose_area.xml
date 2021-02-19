@@ -17,7 +17,7 @@
             android:textColor="#fff"
             android:textSize="20sp" />
 
-        <ImageButton
+        <Button
             android:id="@+id/back_button"
             android:layout_width="25dp"
             android:layout_height="25dp"

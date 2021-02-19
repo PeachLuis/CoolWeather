@@ -2,6 +2,7 @@ package com.example.coolweather;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +47,7 @@ public class ChooseAreaFragment extends Fragment {
 
     private TextView titleText;
 
-    private ImageButton backButton;
+    private Button backButton;
 
     private ListView listView;
 
@@ -83,6 +84,8 @@ public class ChooseAreaFragment extends Fragment {
      * 当前选中的级别
      */
     private int currentLevel;
+
+    private static final String TAG = "ChooseAreaFragment";
 
     @Nullable
     @Override
@@ -194,8 +197,9 @@ public class ChooseAreaFragment extends Fragment {
      * 根据传入的地址和类型从服务器上查询省市县数据
      */
     private void queryFromServer(String address, final String type) {
+        Log.d(TAG, "queryFromServer: ");
         showProgressDialog();
-        HttpUtil.sendOkHttpRequest(address, new Callback() {
+        HttpUtil.sendOkHttpRequest(address, new okhttp3.Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
                 closeProgressDialog();
@@ -204,17 +208,25 @@ public class ChooseAreaFragment extends Fragment {
 
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                Log.d(TAG, "queryFromServer: onResponse: ");
                 String responseText = response.body().string();
+                Log.d(TAG, "queryFromServer: onResponse: "+responseText);
                 boolean result = false;
                 if ("province".equals(type)) {
+                    Log.d(TAG, "queryFromServer: onResponse:province");
                     result = Utility.handleProvinceResponse(responseText);
+                    Log.d(TAG, "handleProvinceResponse OVER");
                 } else if ("city".equals(type)) {
+                    Log.d(TAG, "queryFromServer: onResponse:city");
                     result = Utility.handleCityResponse(responseText, selectedProvince.getId());
                 } else if ("county".equals(type)) {
+                    Log.d(TAG, "queryFromServer: onResponse:county");
                     result = Utility.handleCountyResponse(responseText, selectedCity.getId());
                 }
+                Log.d(TAG, "onResponse: result:" + result);
                 if (result) {
                     getActivity().runOnUiThread(()->{
+                        Log.d(TAG, "runOnUiThread:");
                         closeProgressDialog();
                         switch (type) {
                             case "province":
