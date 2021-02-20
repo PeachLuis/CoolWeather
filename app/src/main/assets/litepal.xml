@@ -5,8 +5,8 @@
     <version value="1"/>
 
     <list>
-        <mapping class="com.example.coolweather.db.Province"/>
-        <mapping class="com.example.coolweather.db.City"/>
-        <mapping class="com.example.coolweather.db.County"/>
+        <mapping class="com.example.kuouweather.db.Province"/>
+        <mapping class="com.example.kuouweather.db.City"/>
+        <mapping class="com.example.kuouweather.db.County"/>
     </list>
 </litepal>
