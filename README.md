@@ -1,6 +1,10 @@
 # CoolWeather
 第一行代码（第2版）酷软天气
 
+## 下载：
+
+https://github.com/PeachLuis/CoolWeather/releases
+
 ## 版本：
 
 Version 1.0  完成郭霖老师第一行代码（第2版）酷软天气
