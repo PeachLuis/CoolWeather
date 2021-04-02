@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WeatherActivity"
+    tools:context=".view.WeatherActivity"
     android:background="@color/design_default_color_primary">
 
     <ImageView
@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:name="com.example.kuouweather.ChooseAreaFragment" />
+            android:name="com.example.kuouweather.view.ChooseAreaFragment" />
     </androidx.drawerlayout.widget.DrawerLayout>
 
 </FrameLayout>
