@@ -1,4 +1,4 @@
-package com.example.kuouweather;
+package com.example.kuouweather.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.widget.ListView;
+
+import com.example.kuouweather.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -17,8 +17,8 @@
             android:enabled="true"
             android:exported="true"></service>
 
-        <activity android:name="com.example.kuouweather.WeatherActivity" />
-        <activity android:name="com.example.kuouweather.MainActivity">
+        <activity android:name="com.example.kuouweather.view.WeatherActivity" />
+        <activity android:name="com.example.kuouweather.view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
